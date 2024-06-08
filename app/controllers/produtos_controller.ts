@@ -22,14 +22,14 @@ export default class ProdutosController {
 
     async store({ request }: HttpContext) {
 
-        const dados = request.only(['nome', 'preco', 'tamanho', 'tipoId'])
+        const dados = request.only(['nome', 'preco', 'tamanho', 'tipo_produto_id'])
         return await Produto.create(dados)
     }
 
     async update({ params, request }: HttpContext) {
 
         const produto = await Produto.findOrFail(params.id)
-        const dados = request.only(['nome', 'preco', 'tamanho', 'tipoId'])
+        const dados = request.only(['nome', 'preco', 'tamanho', 'tipo_produto_id'])
 
         produto.merge(dados)
         return await produto.save

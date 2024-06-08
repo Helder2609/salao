@@ -13,9 +13,9 @@ export default class Produto extends BaseModel {
 
   @column()
    declare preco: number
-
+   
   @column()
-   declare tipoId: number
+   declare tipo_produto_id: number
 
   @column()
   declare tamanho: string
@@ -26,10 +26,10 @@ export default class Produto extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
 
-  @manyToMany(() => ProdutosHasServico)
-   declare produtosHasServicos: ManyToMany<typeof ProdutosHasServico>
+  @manyToMany(() => TipoProduto)
+   declare tipoProduto: ManyToMany<typeof TipoProduto>
 
-  @belongsTo(() => TipoProduto)
-   declare tipoProduto: BelongsTo<typeof TipoProduto>
+  @belongsTo(() => ProdutosHasServico)
+   declare produtosHasServico: BelongsTo<typeof this.ProdutosHasServico>
   
 }

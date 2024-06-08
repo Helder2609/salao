@@ -10,6 +10,9 @@ export default class TipoProduto extends BaseModel {
 
   @column()
   declare nome: string
+  
+  @column()
+  declare tipoProdutoId: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
