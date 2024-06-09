@@ -27,13 +27,14 @@ export default class ProdutosController {
     }
 
     async update({ params, request }: HttpContext) {
-
         const produto = await Produto.findOrFail(params.id)
         const dados = request.only(['nome', 'preco', 'tamanho', 'tipo_produto_id'])
-
+    
         produto.merge(dados)
-        return await produto.save
+        await produto.save() 
+        return produto
     }
+    
 
     async destroy({ params }: HttpContext) {
         const produto = await Produto.findOrFail(params.id)

@@ -15,6 +15,7 @@ import FormaPagamentosController from '../app/controllers/forma_pagamentos_contr
 import FuncionariosController from '../app/controllers/funcionarios_controller.js'
 import ProdutosController from '../app/controllers/produtos_controller.js'
 import TipoProdutosController from '../app/controllers/tipo_produtos_controller.js'
+import ServicosController from '../app/controllers/servicos_controller.js'
 
 router.get('/', async () => {
   return {
@@ -29,3 +30,4 @@ router.resource('/agendamentos', AgendamentosController).apiOnly()
 router.resource('/cargos', CargosController).apiOnly()
 router.resource('/clientes', ClientesController).apiOnly()
 router.resource('/FormaPagamento', FormaPagamentosController).apiOnly()
+router.resource('/servicos', ServicosController).apiOnly()
