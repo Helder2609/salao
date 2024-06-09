@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('nome', 45).notNullable()
       table.decimal('preco').notNullable()
+      table.string('descricao', 255) // Adicionando a coluna descricao
       table.string('tamanho', 45)
       // Adiciona a coluna tipo_produto_id
       table.integer('tipo_produto_id').unsigned().references('id').inTable('tipo_produtos').onDelete('CASCADE')

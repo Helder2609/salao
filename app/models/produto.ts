@@ -13,6 +13,9 @@ export default class Produto extends BaseModel {
 
   @column()
    declare preco: number
+
+  @column()
+   declare descricao: string
    
   @column()
    declare tipoProdutoId: number
